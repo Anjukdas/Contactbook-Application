@@ -1,19 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Cards</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f2f5, #d9e2ec);
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      width: 260px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      background-color: #fdfdfd;
+    }
+
+    .card.clicked {
+      animation: clickFlash 0.4s;
+    }
+
+    @keyframes clickFlash {
+      0% { background-color: #e0f7fa; }
+      100% { background-color: #ffffff; }
+    }
+
+    .card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
+      border: 2px solid #3498db;
+    }
+
+    .card h2 {
+      margin: 0.3rem 0 0.1rem;
+      font-size: 1.3rem;
+      color: #34495e;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-weight: normal;
+      color: #7f8c8d;
+    }
+
+    .card p {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .card p strong {
+      color: #2c3e50;
+    }
+  </style>
 </head>
 <body>
-    <div class="card"></div>
-    <img id="profilepic" src="" alt="Profile Photo">
-    <h2 id="firstname">Jhon</h2>
-    <h3 id="secondname">Doe</h3>
-    <p><strong>Phone:</strong><span id="phonespan">+1234567890</span></p>
-    <p><strong>city:</strong><span id="cityspan">newyork</span></p>
-    <p><strong>Email:</strong><span id="emailspan">JhonDoe@gmail.com</span></p>
+  <h1>Contact Directory</h1>
+  <div class="container" id="user-container"></div>
 
-<script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
+
